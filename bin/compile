@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+# Paths.
+BUILD_DIR=$1
+
+# we need to put a bunch of symlinks in there later
+mkdir -p /app/.heroku
+
+# Switch to the repo's context.
+pushd $BUILD_DIR
+
+# Restore old artifacts from the cache.
+mkdir -p .heroku/vendor
+
+MY_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/myspell.zip"
+A_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/aspell-dicts.zip"
+
+TARGET_DIR_ENCHANT_DICTS="/app/.heroku/python/lib/python2.7/site-packages/enchant/share/enchant/myspell"
+TARGET_DIR_ASPELL_DICTS="/app/.heroku/vendor/lib/aspell-0.60"
+
+echo "-----> Noticed enchant. Copying MySpell dictionaries."
+mkdir -p $TARGET_DIR_ENCHANT_DICTS
+
+pushd $TARGET_DIR_ENCHANT_DICTS
+
+# Download and extract dicts.
+curl -s -L -o myspell-dicts.zip $MY_SPELL_DICTS_PATH
+unzip -j -o myspell-dicts.zip
+
+rm myspell-dicts.zip
+
+chmod 644 *
+ls -al
+
+popd
+
+echo "-----> Copying Aspell dictionaries."
+
+ls -al /app/.heroku
+mkdir -p $TARGET_DIR_ASPELL_DICTS
+
+pushd $TARGET_DIR_ASPELL_DICTS
+
+# Download and extract dicts.
+curl -s -L -o aspell-dicts.zip $A_SPELL_DICTS_PATH
+unzip -j -o aspell-dicts.zip
+
+rm aspell-dicts.zip
+
+chmod 644 *
+ls -al
+
+echo "<----- Copied Aspell dictionaries."
+popd
+
+popd
