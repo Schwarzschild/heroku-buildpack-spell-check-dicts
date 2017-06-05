@@ -51,6 +51,10 @@ chmod 644 *
 ls -al
 
 echo "<----- Copied Aspell dictionaries."
-popd
 
+# copy here too
+mkdir -p $BUILD_DIR/.heroku/vendor/lib/aspell-0.60
+cp * $BUILD_DIR/.heroku/vendor/lib/aspell-0.60
+
+popd
 popd
