@@ -12,13 +12,11 @@ pushd $BUILD_DIR
 # Restore old artifacts from the cache.
 mkdir -p .heroku/vendor
 
-mkdir -p .enchant/myspell
-
 MY_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/myspell.zip"
 A_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/aspell-dicts.zip"
 
 TARGET_DIR_ENCHANT_DICTS="/app/.heroku/python/lib/python3.6/site-packages/enchant/share/enchant/myspell"
-DEFAULT_DIR_ENCHANT_DICTS="/app/.enchant/myspell"
+DEFAULT_DIR_ENCHANT_DICTS=".enchant/myspell"
 TARGET_DIR_ASPELL_DICTS="/app/.heroku/vendor/lib/aspell-0.60"
 
 echo "-----> Noticed enchant. Copying MySpell dictionaries."
