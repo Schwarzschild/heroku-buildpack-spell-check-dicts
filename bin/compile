@@ -38,7 +38,11 @@ rm myspell-dicts.zip
 chmod 644 *
 ls -al
 
-cd "/app/.enchant/myspell"
+cd /app/.enchant/myspell
+
+echo $PWD
+
+echo 
 
 curl -s -L -o myspell-dicts.zip $MY_SPELL_DICTS_PATH
 unzip -j -o myspell-dicts.zip
