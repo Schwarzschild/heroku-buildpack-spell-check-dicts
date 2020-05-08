@@ -12,6 +12,8 @@ pushd $BUILD_DIR
 # Restore old artifacts from the cache.
 mkdir -p .heroku/vendor
 
+mkdir -p .enchant/myspell
+
 MY_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/myspell.zip"
 A_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/aspell-dicts.zip"
 
