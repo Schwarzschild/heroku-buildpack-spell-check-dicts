@@ -31,9 +31,11 @@ pushd $TARGET_DIR_ENCHANT_DICTS
 curl -s -L -o myspell-dicts.zip $MY_SPELL_DICTS_PATH
 unzip -j -o myspell-dicts.zip
 
-cp * $DEFAULT_DIR_ENCHANT_DICTS
+cp -r $MY_SPELL_DICTS_PATH $DEFAULT_DIR_ENCHANT_DICTS
 
 rm myspell-dicts.zip
+
+chmod 644 -r $DEFAULT_DIR_ENCHANT_DICTS
 
 chmod 644 *
 ls -al
