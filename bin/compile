@@ -38,7 +38,7 @@ rm myspell-dicts.zip
 chmod 644 *
 ls -al
 
-cd /app/.enchant/myspell
+cd $DEFAULT_DIR_ENCHANT_DICTS
 
 echo $PWD
 
