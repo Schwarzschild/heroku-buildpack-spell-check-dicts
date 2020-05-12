@@ -62,6 +62,8 @@ unzip -j -o myspell-dicts.zip
 
 rm myspell-dicts.zip
 
+apt-get install -y myspell-en-us
+
 chmod 644 *
 
 popd
