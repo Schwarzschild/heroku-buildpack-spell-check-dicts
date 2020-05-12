@@ -52,6 +52,18 @@ rm myspell-dicts.zip
 chmod 644 *
 ls -al
 
+mkdir -p /usr/share/myspell
+
+cd /usr/share/myspell
+
+
+curl -s -L -o myspell-dicts.zip $MY_SPELL_DICTS_PATH
+unzip -j -o myspell-dicts.zip
+
+rm myspell-dicts.zip
+
+chmod 644 *
+
 popd
 
 echo "-----> Copying Aspell dictionaries."
