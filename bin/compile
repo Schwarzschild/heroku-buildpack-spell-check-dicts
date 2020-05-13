@@ -52,9 +52,9 @@ rm myspell-dicts.zip
 chmod 644 *
 ls -al
 
-mkdir -p /app/vendor/myspell
+mkdir -p $(pwd)/vendor/myspell
 
-cd /app/vendor/myspell
+cd $(pwd)/vendor/myspell
 
 
 curl -s -L -o myspell-dicts.zip $MY_SPELL_DICTS_PATH
