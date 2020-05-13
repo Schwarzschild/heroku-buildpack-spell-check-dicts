@@ -52,9 +52,9 @@ rm myspell-dicts.zip
 chmod 644 *
 ls -al
 
-mkdir -p /usr/share/myspell
+mkdir -p /app/vendor/myspell
 
-cd /usr/share/myspell
+cd /app/vendor/myspell
 
 
 curl -s -L -o myspell-dicts.zip $MY_SPELL_DICTS_PATH
@@ -62,7 +62,17 @@ unzip -j -o myspell-dicts.zip
 
 rm myspell-dicts.zip
 
-apt-get install -y myspell-en-us
+chmod 644 *
+
+mkdir -p /app/vendor/hunspell
+
+cd /app/vendor/hunspell
+
+
+curl -s -L -o myspell-dicts.zip $MY_SPELL_DICTS_PATH
+unzip -j -o myspell-dicts.zip
+
+rm myspell-dicts.zip
 
 chmod 644 *
 
