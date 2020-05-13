@@ -18,7 +18,7 @@ MY_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/myspell.zip"
 A_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/aspell-dicts.zip"
 
 TARGET_DIR_ENCHANT_DICTS="/app/.heroku/python/lib/python3.6/site-packages/enchant/share/enchant/myspell"
-DEFAULT_DIR_ENCHANT_DICTS="$(pwd)/.config/enchant"
+DEFAULT_DIR_ENCHANT_DICTS="$(pwd)/.config/enchant/hunspell"
 TARGET_DIR_ASPELL_DICTS="/app/.heroku/vendor/lib/aspell-0.60"
 
 echo "-----> Noticed enchant. Copying MySpell dictionaries."
