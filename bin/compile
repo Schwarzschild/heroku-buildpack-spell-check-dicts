@@ -19,6 +19,7 @@ A_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/aspell-dicts.zip"
 
 TARGET_DIR_ENCHANT_DICTS="/app/.heroku/python/lib/python3.6/site-packages/enchant/share/enchant/myspell"
 DEFAULT_DIR_ENCHANT_DICTS="$(pwd)/vendor/hunspell"
+DEFAULT_MYSPELL_ENCHANT_DICTS="$(pwd)/vendor/myspell"
 TARGET_DIR_ASPELL_DICTS="/app/.heroku/vendor/lib/aspell-0.60"
 
 echo "-----> Noticed enchant. Copying MySpell dictionaries."
@@ -52,10 +53,9 @@ rm myspell-dicts.zip
 chmod 644 *
 ls -al
 
-mkdir -p $(pwd)/vendor/myspell
+mkdir -p $DEFAULT_MYSPELL_ENCHANT_DICTS
 
-cd $(pwd)/vendor/myspell
-
+cd $DEFAULT_MYSPELL_ENCHANT_DICTS
 
 curl -s -L -o myspell-dicts.zip $MY_SPELL_DICTS_PATH
 unzip -j -o myspell-dicts.zip
